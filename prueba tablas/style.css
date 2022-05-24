@@ -1,0 +1,14 @@
+body, html{
+    width: 98vh;
+    display: flex;
+}
+
+#contenedorBotones{
+    display: none;
+    margin-left: 1vh;
+}
+
+#tablaprueba{
+    margin-right: 10vh;
+    
+}

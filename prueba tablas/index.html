@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+    <table id="tablaprueba">
+        <thead>
+            <tr>
+                <th>| Columna 1 |</th>
+                <th>Columna 2</th>
+                <th>| Columna 3 |</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    </section>
+
+    <section>
+    <button type="button" onclick='mostrarBotones()'>Nuevos Datos</button>
+
+    <div id="contenedorBotones">
+        <p>Texto 1: <input type="text" id="texto1"></p>
+        <p>Texto 2: <input type="text" id="texto2"></p>
+        <p>Texto 3: <input type="text" id="texto3"></p>
+
+        <div>
+            <button type="button" onclick='agregarFila()'>Agregar Fila</button>
+        </div>
+    </div>
+    </section>
+
+    <script>
+        function mostrarBotones(){
+            document.getElementById("contenedorBotones").style.display = "grid";
+        }
+
+
+        function agregarFila() {
+
+            let tabla = document.getElementById("tablaprueba");
+            let fila = document.createElement("tr");
+            let columna1 = document.createElement("th");
+            let columna2 = document.createElement("th");
+            let columna3 = document.createElement("th");
+
+            let value1 = document.getElementById("texto1");
+            let value2 = document.getElementById("texto2");
+            let value3 = document.getElementById("texto3");
+
+            columna1.append('| ' + value1.value + ' |');
+            columna2.append(value2.value);
+            columna3.append('| ' + value3.value + ' |');
+            fila.append(columna1, columna2, columna3);
+            tabla.append(fila);
+
+            texto1.value = ' ';
+            texto2.value = ' ';
+            texto3.value = ' ';
+
+            document.getElementById("contenedorBotones").style.display = "none";
+        }
+
+    </script>
+</body>
+</html>
